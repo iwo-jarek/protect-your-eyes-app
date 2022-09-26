@@ -1,25 +1,25 @@
-'use strict';
+"use strict";
 
-const path = require('path');
-const { app, BrowserWindow } = require('electron');
+const path = require("path");
+const { app, BrowserWindow } = require("electron");
 
 function main() {
-
   // create new window
   let mainWindow = new BrowserWindow({
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
     },
-    width: 800,
-    height: 600,
-  })
+    width: 1000,
+    height: 1000,
+    frame: false,
+  });
 
   // load app/index.html as the window content
-  mainWindow.loadFile(path.join('app', 'index.html'));
+  mainWindow.loadFile(path.join("app", "index.html"));
 }
 
-app.on('ready', main);
+app.on("ready", main);
 
-app.on('window-all-closed', function () {
+app.on("window-all-closed", function () {
   app.quit();
 });
